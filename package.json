@@ -1,12 +1,46 @@
 {
   "name": "advanced-node",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "version": "0.0.1",
+  "description": "Professional API using Clean Architecture and TDD.",
+  "keywords": [
+    "clean architecture",
+    "clean code",
+    "tdd",
+    "ddd",
+    "solid",
+    "design patterns",
+    "node",
+    "typescript",
+    "jest",
+    "typeorm"
+  ],
+  "author": {
+    "name": "Alexandre Oliveira",
+    "email": "alexandrevoliveira30@gmail.com",
+    "url": "https://www.linkedin.com/in/alexandrevoliveira/"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexandrevoliveira/advanced-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexandrevoliveira/advanced-node/issues",
+    "email": "alexandrevoliveira30@gmail.com"
+  },
+  "scripts": {
+    "start": "node dist/main/api",
+    "build": "rimraf dist && tsc"
+  },
+  "dependencies": {
+    "module-alias": "^2.2.2",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/module-alias": "^2.0.1",
+    "@types/node": "^18.6.5",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": "16.x"
+  }
 }
