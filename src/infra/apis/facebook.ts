@@ -1,22 +1,9 @@
 import { LoadFacebookUserApi } from '@/domain/contracts/apis'
 import { HttpGetClient } from '@/infra/http'
 
-type AppToken = {
-  access_token: string
-}
-
-type DebugToken = {
-  data: {
-    user_id: string
-  }
-}
-
-type UserInfo = {
-  id: string
-  name: string
-  email: string
-}
-
+type AppToken = { access_token: string }
+type DebugToken = { data: { user_id: string} }
+type UserInfo = { id: string, name: string, email: string }
 type Params = LoadFacebookUserApi.Params
 type Result = LoadFacebookUserApi.Result
 
