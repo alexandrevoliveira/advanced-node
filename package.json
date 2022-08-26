@@ -40,6 +40,7 @@
     "test:watch": "npm test -- --watch",
     "test:staged": "npm test -- --findRelatedTests",
     "test:coverage": "npm test -- --coverage",
+    "test:coveralls": "npm run test:coverage && coveralls < coverage/lcov.info",
     "test:fb-api": "npm test -- -c ./jest.integration.config.js ./tests/external/facebook-api.test.ts"
   },
   "dependencies": {
@@ -63,6 +64,7 @@
     "@types/node": "^18.7.13",
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "coveralls": "^3.1.1",
     "eslint": "^8.22.0",
     "eslint-config-standard-with-typescript": "^22.0.0",
     "eslint-plugin-import": "^2.26.0",
@@ -73,7 +75,6 @@
     "jest": "^28.1.3",
     "jest-mock-extended": "^2.0.7",
     "lint-staged": "^13.0.3",
-    "npm-check": "^6.0.1",
     "pg-mem": "^1.9.11",
     "supertest": "^6.2.4",
     "ts-jest": "^28.0.8",
