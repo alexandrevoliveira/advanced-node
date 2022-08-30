@@ -16,12 +16,12 @@ describe('Facebook Api Integration Tests', () => {
   })
 
   it('should return a Facebook User if token is valid', async () => {
-    const fbUser = await sut.loadUser({ token: 'EAAFN6IfFATUBAKvoscCtgaQ8FxHyDvT4P67cjZBQoMpkdwFwiP8ZCXwEhnf1AsNVZAPIN2gkDfvPCEsA8s8mVcUDLt12K3glUPebUVh70kLw1OwJGLHiZAhuH0jhHei48ikll5NUL8CZCbPTGfb57pA6GIXzXb5bIr0PTVUBtoafp10dcXTG7wwLQrZBFjyYgPZAtJod60MXQZDZD' })
+    const fbUser = await sut.loadUser({ token: 'EAAFN6IfFATUBABfnwZAwz3dLYP8oZAkQ1m4ykXl1R9WQaXfiUEGMTtmZBEUofucwxHZBFMSvQXyMh0QYXnFbkLEnZBT7dlpWm3GQJOpzrBbovi5ZAEdviA0aiKBeH7efuFZCG9moRJAN28ieQQtTMjTPE9ZBeEhiAL5Bg8dTgdLml7ZAKMqDKVsdaMOJZCbodrRYFzpacZCjG8XFgZDZD' })
 
     expect(fbUser).toEqual({
       facebookId: '103885812449051',
-      name: 'Alexandre Teste',
-      email: 'alexandre_nwqpczg_teste@tfbnw.net'
+      name: 'Alexandre Dev',
+      email: 'alexandre_divckum_dev@tfbnw.net'
     })
   })
 
