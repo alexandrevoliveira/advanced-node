@@ -110,4 +110,13 @@ describe('ChangeProfilePicture', () => {
 
     await expect(promise).rejects.toThrow(error)
   })
+
+  it('should rethrow if UploadFile throws', async () => {
+    const error = new Error('upload_error')
+    fileStorage.upload.mockRejectedValueOnce(error)
+
+    const promise = sut({ id: 'any_id', file })
+
+    await expect(promise).rejects.toThrow(error)
+  })
 })
