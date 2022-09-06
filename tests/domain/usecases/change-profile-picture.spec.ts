@@ -50,6 +50,15 @@ describe('ChangeProfilePicture', () => {
     expect(userProfileRepo.savePicture).toHaveBeenCalledTimes(1)
   })
 
+  it('should call SaveUserPicture with UserProfile', async () => {
+    userProfileRepo.load.mockResolvedValueOnce(undefined)
+
+    await sut({ id: 'any_id', file })
+
+    expect(userProfileRepo.savePicture).toHaveBeenCalledWith(...jest.mocked(UserProfile).mock.instances)
+    expect(userProfileRepo.savePicture).toHaveBeenCalledTimes(1)
+  })
+
   it('should call LoadUserProfile with correct input', async () => {
     await sut({ id: 'any_id', file: undefined })
 
