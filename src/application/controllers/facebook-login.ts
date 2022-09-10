@@ -1,6 +1,6 @@
 import { Controller } from '@/application/controllers'
 import { HttpResponse, ok, unauthorized } from '@/application/helpers'
-import { ValidationBuilder, Validator } from '@/application/validation'
+import { ValidationBuilder as Builder, Validator } from '@/application/validation'
 import { FacebookAuthentication } from '@/domain/usecases'
 
 type HttpRequest = { token: string }
@@ -22,7 +22,7 @@ export class FacebookLoginController extends Controller {
 
   override buildValidators ({ token }: HttpRequest): Validator[] {
     return [
-      ...ValidationBuilder.of({ value: token, fieldName: 'token' }).required().build()
+      ...Builder.of({ value: token, fieldName: 'token' }).required().build()
     ]
   }
 }
