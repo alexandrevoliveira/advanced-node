@@ -2,7 +2,7 @@ import { LoadFacebookUser } from '@/domain/contracts/gateways'
 import { HttpGetClient } from '@/infra/gateways'
 
 type AppToken = { access_token: string }
-type DebugToken = { data: { user_id: string} }
+type DebugToken = { data: { user_id: string } }
 type UserInfo = { id: string, name: string, email: string }
 type Input = LoadFacebookUser.Input
 type Output = LoadFacebookUser.Output
