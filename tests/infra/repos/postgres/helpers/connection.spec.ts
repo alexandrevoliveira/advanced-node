@@ -32,7 +32,6 @@ describe('PgConnection', () => {
     getConnectionManagerSpy = jest.fn().mockReturnValue({
       has: hasSpy
     })
-    jest.mocked(getConnectionManager).mockImplementation(getConnectionManagerSpy)
     startTransactionSpy = jest.fn()
     releaseSpy = jest.fn()
     commitTransactionSpy = jest.fn()
@@ -48,12 +47,13 @@ describe('PgConnection', () => {
     createConnectionSpy = jest.fn().mockResolvedValue({
       createQueryRunner: createQueryRunnerSpy
     })
-    jest.mocked(createConnection).mockImplementation(createConnectionSpy)
     closeSpy = jest.fn()
     getConnectionSpy = jest.fn().mockReturnValue({
       createQueryRunner: createQueryRunnerSpy,
       close: closeSpy
     })
+    jest.mocked(createConnection).mockImplementation(createConnectionSpy)
+    jest.mocked(getConnectionManager).mockImplementation(getConnectionManagerSpy)
     jest.mocked(getConnection).mockImplementation(getConnectionSpy)
     jest.mocked(getRepository).mockImplementation(getRepositorySpy)
   })
@@ -172,7 +172,7 @@ describe('PgConnection', () => {
     await expect(promise).rejects.toThrow(new TransactionNotFoundError())
   })
 
-  it('should get repository from transaction', async () => {
+  it('should get repository from queryRunner', async () => {
     await sut.connect()
     await sut.openTransaction()
     const repository = sut.getRepository(PgUser)
